@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="FootballTeam" extends="struts-default">
+
+        <action name="index" method="execute" class="FootballTeamAction">
+            <result name="success">WEB-INF/pages/teams.jsp</result>
+        </action>
+
+        <action name="list" method="execute" class="FootballTeamAction">
+            <result name="success">WEB-INF/pages/teams.jsp</result>
+        </action>
+
+        <action name="remove" class="FootballTeamAction" method="remove">
+            <result name="success">WEB-INF/pages/teams.jsp</result>
+        </action>
+
+        <action name="save" class="FootballTeamAction" method="save">
+            <result name="success">WEB-INF/pages/teams.jsp</result>
+            <result name="input">WEB-INF/pages/teams.jsp</result>
+        </action>
+
+        <action name="insert" class="FootballTeamAction" method="prepareInsert">
+            <result name="success">WEB-INF/pages/teams.jsp</result>
+        </action>
+
+        <action name="edit" class="FootballTeamAction" method="edit">
+            <result name="success">WEB-INF/pages/teams.jsp</result>
+            <result>WEB-INF/pages/teams.jsp</result>
+        </action>
+
+    </package>
+
+</struts>
